@@ -22,14 +22,14 @@ describe("Add pet to cart", () => {
             expect(itemDetails.productId).to.equal(cartData.items[0].productId);
             expect(itemDetails.inStock).to.be.true;
             expect(itemDetails.quantity).to.equal(cartData.items[0].quantity);
-            expect(itemDetails.listPrice).to.equal('$' + cartData.items[0].listPrice.toFixed(2));
-            expect(itemDetails.totalCost).to.equal('$' + cartData.items[0].totalCost.toFixed(2));
+            expect(itemDetails.listPrice).to.equal(cartData.items[0].listPrice.toFixed(2));
+            expect(itemDetails.totalCost).to.equal(cartData.items[0].totalCost.toFixed(2));
           });
         });
       });
   
       shoppingCartPage.getSubTotal().then((subTotal) => {
-        expect(subTotal.text().trim()).to.equal('Sub Total: $' + cartData.subTotal.toFixed(2));
+        expect(subTotal).to.equal(cartData.subTotal.toFixed(2));
       });
     });
 

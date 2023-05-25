@@ -60,8 +60,8 @@ describe("Checkout Proccess", () => {
         const firstRow = rows.eq(0);
         orderPage.getItemId(firstRow).should('eq', cartData.items[0].itemId);
         orderPage.getItemQuantity(firstRow).should('eq', String(cartData.items[0].quantity));
-        orderPage.getItemPrice(firstRow).should('eq', '$' + cartData.items[0].listPrice.toFixed(2));
-        orderPage.getItemTotalCost(firstRow).should('eq', '$' + cartData.items[0].totalCost.toFixed(2));
+        orderPage.getItemPrice(firstRow).should('eq',cartData.items[0].listPrice.toFixed(2));
+        orderPage.getItemTotalCost(firstRow).should('eq',cartData.items[0].totalCost.toFixed(2));
       });
   
       orderPage.getTotalCost().should('eq', cartData.subTotal.toFixed(2));

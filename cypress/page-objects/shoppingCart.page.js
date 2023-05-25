@@ -17,16 +17,19 @@ class ShoppingCartPage {
           description: Cypress.$(tds[2]).text().trim(),
           inStock: Cypress.$(tds[3]).text().trim() === 'true',
           quantity: parseInt(Cypress.$(tds[4]).find('input').val()),
-          listPrice: Cypress.$(tds[5]).text().trim(),
-          totalCost: Cypress.$(tds[6]).text().trim(),
+          listPrice: Cypress.$(tds[5]).text().trim().replace('$', ''),
+          totalCost: Cypress.$(tds[6]).text().trim().replace('$', ''),
         };
         return itemDetails;
       });
     }
   
     getSubTotal() {
-      return cy.get(this.subTotal);
+      return cy.get(this.subTotal).invoke('text').then((text) => {
+        return text.trim().replace('Sub Total: $', '');
+      });
     }
+    
   
     getUpdateCartQuantitiesButton() {
       return cy.get(this.updateCartQuantitiesButton);

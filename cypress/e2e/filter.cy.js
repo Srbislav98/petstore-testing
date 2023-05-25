@@ -13,7 +13,6 @@ describe("Filter pets", () => {
       });
     
       it('should be able to filter pets by clicking sidebar menu', () => {
-        //cy.get('#SidebarContent').click();
         cy.get('#SidebarContent a[href*="FISH"]').click();
     
         cy.get('tr').should('have.length', 5);

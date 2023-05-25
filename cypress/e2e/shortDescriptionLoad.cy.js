@@ -19,7 +19,7 @@ describe("Pet short description", () => {
           subcategoryPage.getItemDetails(cy.wrap(itemRow)).then((itemDetails) => {
             expect(itemDetails.itemId).to.equal(petData.itemId);
             expect(itemDetails.productId).to.equal(petData.productId);
-            expect(itemDetails.listPrice).to.equal('$' + petData.price.toFixed(2));
+            expect(itemDetails.listPrice).to.equal(petData.price.toFixed(2));
           });
         });
       });

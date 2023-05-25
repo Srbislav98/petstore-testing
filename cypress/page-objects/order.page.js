@@ -57,11 +57,11 @@ class OrderPage {
     }
   
     getItemPrice(row) {
-      return cy.wrap(row).find('td:nth-child(4)').invoke('text').then((text) => text.trim());
+      return cy.wrap(row).find('td:nth-child(4)').invoke('text').then((text) => text.trim().replace('$', ''));
     }
   
     getItemTotalCost(row) {
-      return cy.wrap(row).find('td:nth-child(5)').invoke('text').then((text) => text.trim());
+      return cy.wrap(row).find('td:nth-child(5)').invoke('text').then((text) => text.trim().replace('$', ''));
     }
   
     getTotalCost() {
