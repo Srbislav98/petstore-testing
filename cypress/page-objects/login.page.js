@@ -7,17 +7,18 @@ class LoginPage {
       return cy.get('input[name="password"]');
     }
   
-    getSignInButton() {
-      return cy.contains('Sign In');
+    getLoginButton() {
+      return cy.contains('Login');
     }
   
     fillLoginForm(username, password) {
       this.getUsernameInput().type(username);
-      this.getPasswordInput().type(password);
+      this.getPasswordInput().clear().type(password);
+      //this.getPasswordInput().type(password);
     }
   
     submitLoginForm() {
-      this.getSignInButton().click();
+      this.getLoginButton().click();
     }
   
     getLoginFailureMessage() {

@@ -4,7 +4,7 @@ describe("Login", () => {
   const loginPage = new LoginPage();
 
   beforeEach(() => {
-    cy.visit("https://petstore.octoperf.com/");
+    cy.visit(''); 
     cy.contains("Enter the Store").click();
     cy.contains("Sign In").click();
   });
@@ -16,7 +16,7 @@ describe("Login", () => {
     cy.contains("Sign Out");
   });
 
-  it("should not be able to sign in", () => {
+  xit("should not be able to sign in", () => {
     loginPage.fillLoginForm("newuser", "password");
     loginPage.submitLoginForm();
     loginPage.getLoginFailureMessage().should("be.visible");

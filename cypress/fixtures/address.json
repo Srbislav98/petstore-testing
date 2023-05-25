@@ -1,0 +1,24 @@
+{
+    "billingAddress": {
+      "firstName": "John",
+      "lastName": "Doe",
+      "address1": "123 Main St",
+      "address2": "",
+      "city": "New York",
+      "state": "NY",
+      "zipCode": "12345",
+      "country": "United States"
+    },
+    "shippingAddress": {
+      "firstName": "John",
+      "lastName": "Doe",
+      "address1": "123 Main St",
+      "address2": "",
+      "city": "New York",
+      "state": "NY",
+      "zipCode": "12345",
+      "country": "United States",
+      "courier": "UPS"
+    }
+}
+  
